@@ -10,7 +10,7 @@ mupdf(){
 	docker run --rm \
 		-v "$(pwd)":/pdf \
 		-v /tmp/.X11-unix:/tmp/.X11-unix \
-    -e DISPLAY=unix$DISPLAY \
+    		-e DISPLAY=unix$DISPLAY \
 		turchinc/xenial-mupdf mupdf /pdf/"$@"
 }
 ```  
