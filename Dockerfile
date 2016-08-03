@@ -6,8 +6,8 @@ MAINTAINER Chris Turchin <chris.turchin@bertschinnovation.com>
 ENV DEBIAN_FRONTEND noninteractive
 
 # mupdf 
-RUN apt-get update && apt-get install -y -q software-properties-common 
-RUN add-apt-repository ppa:ubuntuhandbook1/apps
-RUN apt-get update && apt-get install -y -q mupdf mupdf-tools
-RUN apt-get autoclean && apt-get --purge -y autoremove && \
+RUN     apt-get update && apt-get install -y -q software-properties-common && \
+        add-apt-repository ppa:ubuntuhandbook1/apps && \
+        apt-get update && apt-get install -y -q mupdf mupdf-tools && \
+        apt-get autoclean && apt-get --purge -y autoremove && \
         rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
